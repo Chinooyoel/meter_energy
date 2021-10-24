@@ -21,8 +21,15 @@
             <div class='my-2 text-center'>
                 <button class='btn btn-info' @click='new_game'>Nueva partida</button>
             </div>
+            <div>
+                <h2 class='text-center'>Historial</h2>
+                <ul class="list-group">
+                    <li class="list-group-item bg-secondary text-white" v-for='round_history in history'>
+                        Ronda {{round_history.round}} : {{ round_history.energy}} energias
+                    </li>
+                </ul>
+            </div>
         </div>
-
     </div>
     
 

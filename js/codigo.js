@@ -3,7 +3,8 @@ const app = new Vue({
     el: '#app',
     data: {
         energy: 3,
-        round: 1
+        round: 1,
+        history: [{round: 1, energy: 3}]
     },
     methods: {
         add_energy: function(){
@@ -19,6 +20,7 @@ const app = new Vue({
         new_game: function(){
             this.energy = 3;
             this.round = 1;
+            this.history = [];
         }
     },
     watch: {
@@ -26,6 +28,9 @@ const app = new Vue({
             if( val > 10){
                 this.energy = 10;
             }
+        },
+        round(val){
+            this.history.push({round: val, energy:this.energy})
         }
     }
 })
